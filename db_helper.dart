@@ -153,7 +153,7 @@ void quaryFilter() async {
 
 *****Update data*****
   void update() async {
-    var row = await dbHelper.updateData(2);
+    var row = await dbHelper.updateData(2,row);
     print(row);
   }
 
