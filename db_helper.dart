@@ -82,20 +82,13 @@ class DatabaseHelper {
     var res = await db.delete(table, where: 'id = ?', whereArgs: [id]);
     return res;
   }
-
-  // Update data
-  Future<int> updateData(int id) async {
+   // Update data
+  Future<int> updateData(int id, Map<String, dynamic> row) async {
     Database db = await instance.database;
-    var res = await db.update(
-        table,
-        {
-          columnName: 'Rafiqul isalm',
-          columnAge: 21,
-        },
-        where: "id = ?",
-        whereArgs: [id]);
+    var res = await db.update(table, row, where: "id = ?", whereArgs: [id]);
     return res;
   }
+
 }
 
 /*
